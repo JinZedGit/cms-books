@@ -1,7 +1,10 @@
 <?php 
+session_start();
 require('header_footer/connection.php');
 include('header_footer/admin-header.php');
 include('header_footer/admin-side-bar.php');
+
+if($_SESSION['user_role'] == 3){
 
 $request = $_SERVER['REQUEST_URI'];
 $request = str_replace("/infolib/admin/", "", $request);
@@ -47,5 +50,13 @@ switch ($request[0]) {
 }
 
 include('header_footer/admin-footer.php');
+
+}else{
+
+  echo '<meta http-equiv="Refresh" content="0; URL=/infolib/">';
+  
+}
+
+
 
 ?>

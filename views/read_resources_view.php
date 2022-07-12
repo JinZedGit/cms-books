@@ -10,7 +10,14 @@
                 <p class="card-text"><small class="text-muted"><?php echo $res_author ?></small></p>
                 <p class="card-text" style="text-align: justified;"><?php echo $res_bibliography ?></p>
                 <p class="card-text"><small class="text-muted"></small></p>
-                <a class="btn btn-primary" style="position: absolute; bottom: 15px; right: 15px;" href="book.php?book_id=<?php echo $res_title; ?>" role="button">Прочети</a>
+                <?php 
+                if(isset($_SESSION['user_role']) > 0){
+                    ?>
+                    <a class="btn btn-primary" style="position: absolute; bottom: 15px; right: 15px;" href="book.php?book_id=<?php echo $res_title; ?>" role="button">Прочети</a>
+                    <?php
+                }
+                
+                ?>
             </div>
         </div>
     </div>

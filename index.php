@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 require ('controllers/connection.php');
 include ('views/header.php');
 
